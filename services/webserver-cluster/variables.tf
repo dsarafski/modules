@@ -60,3 +60,25 @@ variable "alb_security_group_name" {
   type        = string
   default     = "terraform-example-alb"
 }
+
+variable "custom_tags" {
+  description = "Custom tag to set on the instance in the ASG"
+  type = map(string)
+  default = {}
+}
+
+variable "enable_autoscaling" {
+  description = "If set to true, enable auto scaling"
+  type        = bool
+}
+variable "ami" {
+  description = "The AMI to run in the cluster"
+  default     = "ami-07ebfd5b3428b6f4d"
+  type        = string
+}
+
+variable "server_text" {
+  description = "The text the web server should return"
+  default     = "Hello, World"
+  type        = string
+}
